@@ -1,0 +1,400 @@
+/* style.css */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #8A2BE2 0%,
+        #7B68EE 30%,
+        #6A5ACD 60%,
+        #4B0082 100%
+    );
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between; /* จัดให้องค์ประกอบกระจายเต็มพื้นที่ */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    width: 95%;
+    padding: 1rem 2rem; /* เพิ่ม padding ด้านซ้ายและขวา */
+    backdrop-filter: blur(10px);
+    position: relative; /* เพิ่ม position เพื่อควบคุมการจัดวาง */
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-icon {
+    display: block;
+}
+
+.menu img {
+    width: 24px; /* ปรับขนาดความกว้างของรูป menu */
+    height: 24px; /* ปรับความสูงให้เท่ากันเพื่อรักษาสัดส่วน */
+    vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+}
+
+.menu-pop{
+    margin: 5px;
+    margin-top: 0px;
+}
+
+.dropdown-content {
+    display: none; /* ซ่อนเมนูโดย default */
+    position: absolute;
+    /* background-color: rgba(255, 255, 255, 0.9); พื้นหลังเมนู */
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); เงา */
+    border-radius: 10px; /* มุมโค้ง */
+    z-index: 1;
+    backdrop-filter: blur(10px); /* ความเบลอ */
+    margin-top: 0px;
+    margin-left: -25px; 
+}
+
+.dropdown-content a {
+    color: #ffffff; /* สีข้อความ */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(139, 0, 139, 0.1); /* สีพื้นหลังเมื่อ hover */
+    border-radius: 10px; /* มุมโค้ง */
+}
+
+.menu:hover .dropdown-content {
+    display: block; /* แสดงเมนูเมื่อ hover */
+    height: 50px;
+}
+
+.logo {
+    background: linear-gradient(135deg, #e7e7e7, #f8c0e3, #f8a4d2, #ff02c0);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    font-size: 2rem; /* ปรับขนาดฟอนต์ของ logo */
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-bar .button {
+    padding: 0.5rem 1rem; /* ปรับขนาด padding ของปุ่ม Game */
+    font-size: 1rem; /* ปรับขนาดฟอนต์ของปุ่ม Game */
+    margin-left: auto; /* ดันปุ่ม Game ไปชิดขวา */
+}
+
+/* .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+/* ส่วนเนื้อหาหลักตามรูปภาพ */
+.container {
+    padding: 4rem 2rem;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.content-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+    max-width: 50%;
+    min-height: 300px;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #8A2BE2;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.bg-com {
+    position: fixed; /* ทำให้อยู่กับที่เมื่อเลื่อนหน้า */
+    top: 20%;
+    right: -20%; /* ชิดขวา */
+    width: auto; /* ปรับความกว้างอัตโนมัติ */
+    height: 100vh; /* ความสูงเต็มจอ */
+    z-index: -1; /* ให้อยู่ด้านหลังเนื้อหาอื่น */
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+}
+
+.bg-com img {
+    opacity: 0.4;
+    height: 60%; /* ความสูงเต็มจอ */
+    width: auto; /* ปรับความกว้างอัตโนมัติ */
+    object-fit: cover; /* ปรับขนาดวิดีโอให้เต็มพื้นที่ */
+}
+
+.content-section iframe {
+    width: 100%; /* ปรับความกว้างให้เต็มพื้นที่ */
+    height: 315px; /* ปรับความสูงตามต้องการ */
+    border-radius: 15px; /* ทำให้มุมโค้งเหมือนกับ content-section */
+    margin-top: 1rem; /* เพิ่มระยะห่างจากข้อความด้านบน */
+}
+
+.record-player {
+    position:relative;
+    z-index: 1;
+    /* max-height: 100px; */
+    top: -20px;
+
+  }
+
+  .plinth {
+    position: relative;
+    background-color: #760d19;
+    width:400px;
+    height: 300px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.5);
+    border-radius: 20px;
+  }
+  
+  .plinth:before {
+    content:"";
+    position: absolute;
+    width:395px;
+    height: 295px;
+    background-color: #c4222f;
+    border-radius: 20px;
+  }
+  
+  .plinth:after {
+    content:"";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #2c2424;
+    width: 30px;
+    height: 30px;
+    top:20px;
+    left:20px;
+    box-shadow: 0 230px #2c2424;
+  }
+  .platter {
+    position: absolute;
+    border-radius: 50%;
+    width:270px;
+    height: 270px;
+    background-color: #d6d6d6;
+    z-index:2;
+    top:15px;
+    left:15px;
+  }
+  
+  .platter:before {
+    content:"";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #d6d6d6;
+    width:40px;
+    height:40px;
+    border: 10px solid #2c2424;
+    left:280px;
+    top:30px;
+  }
+  
+  .vinyl {
+    position: absolute;
+    background-image: repeating-radial-gradient(#181312, #181312 10%, #2c2424 15%);
+    border-radius:50%;
+    width:250px;
+    height:250px;
+    z-index:5;
+    top:25px;
+    left:25px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+  }
+  
+  .vinyl:before, .vinyl:after {
+    content:"";
+    position: absolute;
+    border-style: solid;
+    border-color: rgba(255,255,255,.1) transparent transparent transparent;
+    border-width: 130px 50px 0 125px;
+  }
+  
+  .vinyl:after {
+    top:170px;
+    left:60px;
+    transform: rotate(-65deg);
+  }
+  
+  .top-circle {
+    position: absolute;
+    z-index:10;
+    width:70px;
+    height: 70px;
+    background-color: #7a101c;
+    border-radius:50%;
+    top:115px;
+    left:115px;
+  }
+  
+  .top-circle:before {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    width:15px;
+    height:15px;
+    background-color: #181312;
+    top:28px;
+    left:28px;
+  }
+
+  input#volume-control {
+    -webkit-appearance: none; 
+    width: 100%; 
+    background-color: transparent; 
+  }
+  
+  input#volume-control:focus {
+    outline: none; 
+  }
+  
+  input#volume-control::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  input#volume-control {
+    position: absolute;
+    z-index:1;
+    transform: rotate(-90deg) scale(.25);
+    left:40%;
+    top:70%;
+  }
+  
+  input#volume-control::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     cursor: pointer;
+     width: 40px;
+     height:70px;
+     background-color: #333533;
+     border: none;
+     border-radius:2px;
+     margin-top:-4px;
+  }
+  
+  input#volume-control::-moz-range-thumb {
+     cursor: pointer;
+     width: 30px;
+     height:70px;
+     background-color: #333533;
+     border: none;
+     border-radius:2px;
+  }
+  
+  input#volume-control::-ms-thumb {
+    cursor: pointer;
+     width: 30px;
+     height:70px;
+     background-color: #333533;
+     border: none;
+     border-radius:2px;
+  }
+  
+  input#volume-control::-webkit-slider-runnable-track {
+    background-color: #d6d6d6;
+    border:none;
+    margin:-30px; 
+  }
+  
+  input#volume-control::-moz-range-track {
+    background-color: #333533;
+    border:30px solid black;
+    outline:2px solid #d6d6d6;
+  }
+
+  input#headshell {
+    display: none;
+  }
+  .headshell {
+    width: 30px;
+    height: 140px;
+    position: absolute;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;
+    border-bottom-right-radius: 50px;
+    z-index:15;
+    left: 290px;
+    top: 80px;
+    cursor: pointer;
+    transition: .3s;
+    transform-origin: top;
+  }
+  
+  .headshell:before, .headshell:after {
+    content:"";
+    position: absolute;
+  }
+  
+  .headshell:before {
+    background-color: black;
+    width:20px;
+    height:30px;
+    top:-20px;
+    left:25px;
+  }
+  
+  .headshell:after {
+    height:0;
+    width:15px;
+    border-top: 25px solid #b2aea6;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    top:133px;
+    left:-20px;
+    transform: rotate(90deg);
+  }
+  
+  #headshell:checked + .headshell {
+    transform: rotate(35deg);
+  }
+  
+  @keyframes play  {
+    to {transform: rotate(360deg);}
+  }
+  
+  #headshell:checked ~ .vinyl {
+    animation: play 2s linear infinite .3s;
+  }

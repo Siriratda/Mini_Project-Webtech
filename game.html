@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - Siriratda </title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="menu">
+            <a href="#" class="menu-icon"><img src="images/home/menu.png" alt="Menu"></a>
+            <div class="dropdown-content">
+                <a href="home.html"><img src="images/home/home.png" alt="Home" class="menu-pop">Homepage</a>
+                <a href="game.html"><img src="images/home/game.png" alt="Game" class="menu-pop">Game</a>
+                <a href="profile.html"><img src="images/home/prof.png" alt="Prof" class="menu-pop">My Profile</a>
+            </div>
+        </div>
+        <h1 class="logo">Siriratda</h1>
+        <a href="home.html" class="button">Home ></a>
+    </div>
+
+    <div class="container">
+        <h1>เกม หลบสิ่งกีดขวาง</h1>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+    </div>
+    <div class="desc">
+        <h2>วิธีการเล่น</h2>
+        <p>ให้ผู้เล่น หลบสิ่งกีดขวาง ที่มี <span class="red">"สีแดง"</span>  <br><br> ด้วยการควบคุมตัวละคร <span class="blue">"สีน้ำเงิน"</span> ด้วยลูกศร ← ↑ ↓ → </p>
+        <p>โดยมีเป้าหมาย เป็นการเก็บคะแนน <span class="green">"สีเขียว"</span> ที่จะสุ่มตำแหน่งทุกๆ 5 วินาที</p>
+    </div> 
+
+    <div id="player" style="display: none;"></div>
+
+    <script src="game.js"></script>
+    <script src="music.js"></script>
+</body>
+</html>
